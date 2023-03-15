@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Inversão de Ordem dos Números</h1>
+    <hr>
+    <form action="">
+        Informe o Número 1:
+        <input type="text" name="" id="numero1">
+        <br /><br />
+        Informe o Número 2:
+        <input type="text" name="" id="numero2">
+        <br /><br />
+        Informe o Número 3:
+        <input type="text" name="" id="numero3">
+        <br /><br />
+        <button onclick="calcular();return false;">Calcular</button>
+        <input type="reset" value="Limpar Formulário">
+        <br /><br />
+        <div id="resposta"></div>
+
+    </form>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var numeroa = parseInt(document.getElementById("numero1").value);
+        var numerob = parseInt(document.getElementById("numero2").value);
+        var numeroc = parseInt(document.getElementById("numero3").value);
+
+        if (numerob < numeroa) {
+            var aux = numeroa;
+            numeroa = numerob;
+            numerob= aux;
+
+
+        }if (numeroc < numeroa) {
+            var aux = numeroa;
+            numeroa = numeroc;
+            numeroc = aux;
+
+        }if(numeroc < numerob){
+            var aux = numerob;
+            numerob = numeroc;
+            numeroc = aux;
+
+        }
+        var respostaj = "Numeros Digitados Reorganizados de Forma Decrecente em Ordem do Maior para o Menor : "+numeroc+" , "+numerob+" , "+numeroa;
+            resposta.innerHTML = respostaj;
+    }
+</script>
